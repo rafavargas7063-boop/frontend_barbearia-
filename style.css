@@ -1,0 +1,346 @@
+/* =========================================================
+   TOKENS
+========================================================= */
+:root {
+  --verde-escuro: #1F3A2E;
+  --verde-mais-escuro: #16291F;
+  --dourado: #C9A24B;
+  --dourado-suave: #E4D2A0;
+  --creme: #F6F1E7;
+  --cartao: #FFFFFF;
+  --texto: #221F1C;
+  --texto-suave: #6B6459;
+  --linha: #E1D8C6;
+  --azul-petroleo: #3B6E71;
+  --vermelho: #A6402F;
+
+  --fonte-titulo: "Fraunces", Georgia, serif;
+  --fonte-texto: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--creme);
+  color: var(--texto);
+  font-family: var(--fonte-texto);
+  line-height: 1.5;
+}
+
+h1, h2 {
+  font-family: var(--fonte-titulo);
+  margin: 0;
+}
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+.topo {
+  background: var(--verde-escuro);
+  background-image: linear-gradient(160deg, var(--verde-escuro) 0%, var(--verde-mais-escuro) 100%);
+  color: var(--creme);
+  padding: 3rem 1.5rem 3.5rem;
+}
+
+.topo-conteudo {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.topo-marca {
+  font-family: var(--fonte-titulo);
+  color: var(--dourado);
+  letter-spacing: 0.04em;
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+}
+
+.topo h1 {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-weight: 600;
+  max-width: 20ch;
+}
+
+.topo-sub {
+  margin: 0.9rem 0 0;
+  max-width: 46ch;
+  color: var(--dourado-suave);
+}
+
+/* =========================================================
+   LAYOUT GERAL
+========================================================= */
+.pagina {
+  max-width: 960px;
+  margin: -2rem auto 0;
+  padding: 0 1.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.cartao {
+  background: var(--cartao);
+  border-radius: 10px;
+  padding: 1.75rem;
+  box-shadow: 0 12px 30px rgba(22, 41, 31, 0.1);
+}
+
+/* =========================================================
+   FORMULÁRIO
+========================================================= */
+.form-cartao h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-grade {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem 1.25rem;
+  align-items: end;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1 1 200px;
+}
+
+.campo label {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  font-weight: 500;
+}
+
+.campo input,
+.campo select {
+  font-family: var(--fonte-texto);
+  font-size: 0.95rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--linha);
+  border-radius: 6px;
+  background: var(--creme);
+  color: var(--texto);
+}
+
+.campo input:focus,
+.campo select:focus {
+  outline: 2px solid var(--azul-petroleo);
+  outline-offset: 1px;
+}
+
+.botao {
+  font-family: var(--fonte-texto);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 1.4rem;
+  cursor: pointer;
+  transition: transform 0.08s ease, background 0.15s ease;
+}
+
+.botao-primario {
+  background: var(--verde-escuro);
+  color: var(--creme);
+  flex: 0 0 auto;
+}
+
+.botao-primario:hover {
+  background: var(--verde-mais-escuro);
+}
+
+.botao-primario:active {
+  transform: scale(0.98);
+}
+
+/* =========================================================
+   RESUMO DO DIA
+========================================================= */
+.resumo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.resumo-item {
+  flex: 1 1 150px;
+  background: var(--cartao);
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  box-shadow: 0 8px 20px rgba(22, 41, 31, 0.07);
+}
+
+.resumo-valor {
+  font-family: var(--fonte-titulo);
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.resumo-rotulo {
+  font-size: 0.82rem;
+  color: var(--texto-suave);
+}
+
+.resumo-destaque {
+  background: var(--verde-escuro);
+}
+
+.resumo-destaque .resumo-valor {
+  color: var(--dourado);
+}
+
+.resumo-destaque .resumo-rotulo {
+  color: var(--dourado-suave);
+}
+
+/* =========================================================
+   QUADRO KANBAN
+========================================================= */
+.quadro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.coluna {
+  flex: 1 1 260px;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.coluna-titulo {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--linha);
+}
+
+.coluna-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 60px;
+}
+
+.coluna-vazia {
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+  font-style: italic;
+  padding: 0.5rem 0.1rem;
+}
+
+/* Cartão de agendamento individual */
+.card-agendamento {
+  background: var(--cartao);
+  border-left: 4px solid var(--dourado);
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 6px 16px rgba(22, 41, 31, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.coluna-atendimento .card-agendamento {
+  border-left-color: var(--azul-petroleo);
+}
+
+.coluna-concluido .card-agendamento {
+  border-left-color: var(--verde-escuro);
+}
+
+.card-cliente {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.card-detalhe {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.card-acoes {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.botao-acao {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.4rem 0.7rem;
+  border-radius: 5px;
+  border: 1px solid var(--linha);
+  background: var(--creme);
+  color: var(--texto);
+  cursor: pointer;
+}
+
+.botao-acao:hover {
+  background: var(--linha);
+}
+
+.botao-remover {
+  border-color: transparent;
+  color: var(--vermelho);
+  margin-left: auto;
+}
+
+.botao-remover:hover {
+  background: rgba(166, 64, 47, 0.1);
+}
+
+/* =========================================================
+   AVISO E RODAPÉ
+========================================================= */
+.aviso-dados {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+  margin: 0;
+}
+
+.rodape {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--texto-suave);
+  font-size: 0.82rem;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+@media (max-width: 640px) {
+  .topo {
+    padding: 2.25rem 1.25rem 3rem;
+  }
+
+  .pagina {
+    padding: 0 1.1rem 2.5rem;
+  }
+
+  .form-grade {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .botao-primario {
+    width: 100%;
+  }
+}
