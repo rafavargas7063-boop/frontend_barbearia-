@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar — Barbearia Alameda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login.css">
+  <script src="auth.js"></script>
+  <script>Auth.redirecionarSeLogado();</script>
+</head>
+<body>
+
+  <div class="login-layout">
+
+    <aside class="login-marca">
+      <div class="login-marca-texto">
+        <p class="login-nome">Barbearia Alameda</p>
+        <h1>Entre para organizar a agenda do dia.</h1>
+        <p class="login-apoio">Cadastre clientes, acompanhe os atendimentos e confira o faturamento em um só lugar.</p>
+      </div>
+      <div class="login-poste" aria-hidden="true"></div>
+    </aside>
+
+    <main class="login-painel">
+      <form id="form-login" class="login-form" novalidate>
+        <h2>Acessar o painel</h2>
+        <p class="login-instrucao">Use o usuário e a senha do seu cadastro.</p>
+
+        <div class="campo">
+          <label for="usuario">Usuário</label>
+          <input type="text" id="usuario" name="usuario" placeholder="Ex: marcos" autocomplete="username" autocapitalize="none" required>
+        </div>
+
+        <div class="campo">
+          <label for="senha">Senha</label>
+          <div class="campo-senha">
+            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" autocomplete="current-password" required>
+            <button type="button" id="alternar-senha" class="botao-olho" aria-label="Mostrar senha" aria-pressed="false">Mostrar</button>
+          </div>
+        </div>
+
+        <p id="login-erro" class="login-erro" role="alert" aria-live="assertive" hidden></p>
+
+        <button type="submit" class="botao botao-primario botao-largo">Entrar</button>
+
+        <details class="login-demo">
+          <summary>Contas de demonstração</summary>
+          <ul>
+            <li><strong>marcos</strong> / marcos123</li>
+            <li><strong>diego</strong> / diego123</li>
+            <li><strong>juliana</strong> / juliana123</li>
+            <li><strong>admin</strong> / admin123</li>
+          </ul>
+        </details>
+      </form>
+
+      <p class="login-rodape">Projeto acadêmico — Desenvolvimento Front-End · Sistema Empresarial</p>
+    </main>
+
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

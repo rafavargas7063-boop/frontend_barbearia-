@@ -1,14 +1,6 @@
-// =============================================================
-// ESTADO DA APLICAÇÃO
-// Nenhum banco de dados e nenhum localStorage: os agendamentos
-// existem apenas na memória do JavaScript durante a sessão.
-// =============================================================
 let agendamentos = [];
 let proximoId = 1;
 
-// =============================================================
-// REFERÊNCIAS DO DOM
-// =============================================================
 const form = document.getElementById("form-agendamento");
 const campoServico = document.getElementById("servico");
 
@@ -21,9 +13,6 @@ const statAtendimento = document.getElementById("stat-atendimento");
 const statConcluidos = document.getElementById("stat-concluidos");
 const statFaturamento = document.getElementById("stat-faturamento");
 
-// =============================================================
-// CADASTRO DE NOVO AGENDAMENTO
-// =============================================================
 form.addEventListener("submit", function (evento) {
   evento.preventDefault();
 
@@ -54,9 +43,6 @@ form.addEventListener("submit", function (evento) {
   renderizarTudo();
 });
 
-// =============================================================
-// AÇÕES SOBRE UM AGENDAMENTO (avançar status / remover)
-// =============================================================
 function avancarStatus(id) {
   const ordem = ["agendado", "atendimento", "concluido"];
   const agendamento = agendamentos.find((item) => item.id === id);
@@ -86,9 +72,7 @@ function removerAgendamento(id) {
   renderizarTudo();
 }
 
-// =============================================================
-// CRIAÇÃO DO CARTÃO VISUAL DE CADA AGENDAMENTO
-// =============================================================
+
 function criarCartao(agendamento) {
   const cartao = document.createElement("article");
   cartao.className = "card-agendamento";
@@ -139,9 +123,7 @@ function criarCartao(agendamento) {
   return cartao;
 }
 
-// =============================================================
-// RENDERIZAÇÃO DO QUADRO (KANBAN)
-// =============================================================
+
 function renderizarColuna(container, status, mensagemVazia) {
   container.innerHTML = "";
 
@@ -160,9 +142,7 @@ function renderizarColuna(container, status, mensagemVazia) {
   itens.forEach((item) => container.appendChild(criarCartao(item)));
 }
 
-// =============================================================
-// CÁLCULO DO FATURAMENTO E ESTATÍSTICAS DO DIA
-// =============================================================
+
 function atualizarResumo() {
   const total = agendamentos.length;
   const emAtendimento = agendamentos.filter((item) => item.status === "atendimento").length;
@@ -176,16 +156,12 @@ function atualizarResumo() {
   statFaturamento.textContent = formatarMoeda(faturamento);
 }
 
-// =============================================================
-// UTILITÁRIO DE FORMATAÇÃO
-// =============================================================
+
 function formatarMoeda(valor) {
   return valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 }
 
-// =============================================================
-// RENDERIZAÇÃO COMPLETA
-// =============================================================
+
 function renderizarTudo() {
   renderizarColuna(listaAgendado, "agendado", "Nenhum cliente agendado.");
   renderizarColuna(listaAtendimento, "atendimento", "Ninguém em atendimento.");
@@ -193,5 +169,4 @@ function renderizarTudo() {
   atualizarResumo();
 }
 
-// Primeira renderização ao carregar a página
 renderizarTudo();

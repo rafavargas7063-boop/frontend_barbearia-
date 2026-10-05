@@ -8,12 +8,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="auth.js"></script>
+  <script>Auth.exigirLogin();</script>
 </head>
 <body>
 
   <header class="topo">
     <div class="topo-conteudo">
-      <p class="topo-marca">Barbearia Alameda</p>
+      <div class="topo-barra">
+        <p class="topo-marca">Barbearia Alameda</p>
+        <div class="topo-usuario">
+          <span class="topo-usuario-nome" id="usuario-logado"></span>
+          <button type="button" class="botao-sair" id="botao-sair">Sair</button>
+        </div>
+      </div>
       <h1>Painel de Agendamentos</h1>
       <p class="topo-sub">Cadastre clientes, acompanhe o andamento do dia e veja o faturamento em tempo real.</p>
     </div>
@@ -109,5 +117,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="sessao.js"></script>
 </body>
 </html>
