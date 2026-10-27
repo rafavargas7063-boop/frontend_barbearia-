@@ -52,3 +52,12 @@ Não é necessário instalar nada nem usar servidor.
 ## Tecnologias
 
 HTML, CSS e JavaScript puro.
+
+## Integrantes
+
+- Gustavo Carvalho
+- Matheus Peçanha
+- Ryan Belizario Alves
+- Rafael Vargas da Costa
+- Leticia Schnabl
+- Stheffany Matos
