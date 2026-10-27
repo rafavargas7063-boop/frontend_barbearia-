@@ -61,3 +61,5 @@ HTML, CSS e JavaScript puro.
 - Rafael Vargas da Costa
 - Leticia Schnabl
 - Stheffany Matos
+## Link GitHub Pages
+https://rafavargas7063-boop.github.io/frontend_barbearia-/
